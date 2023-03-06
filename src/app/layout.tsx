@@ -1,5 +1,5 @@
-import { Navbar, Footer } from '~/components';
 import { SITE_TITLE, SITE_DESCRIPTION } from '~/constants';
+import { Navbar, Footer } from '../components';
 import './globals.css';
 
 export const metadata = {
