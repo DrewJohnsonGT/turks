@@ -171,8 +171,8 @@ export const Contact = () => {
                 </div>
                 <div className="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
                   <p>
-                    We're having trouble sending your message. Please try again
-                    later
+                    We&apos;re having trouble sending your message. Please try
+                    again later
                   </p>
                 </div>
               </div>
