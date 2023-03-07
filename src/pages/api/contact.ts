@@ -1,7 +1,15 @@
-import sgMail from '@sendgrid/mail';
+import FormData from 'form-data';
+import Mailgun from 'mailgun.js';
 import { NextApiResponse, NextApiRequest } from 'next';
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const TO_EMAILS = ['drewjohnsongt@gmail.com'];
+const FROM_EMAIL = 'Turks Luxe Contact Form <contact@mg.turks-luxe.com>';
+
+const mailgun = new Mailgun(FormData);
+const mg = mailgun.client({
+  username: 'api',
+  key: process.env.MAILGUN_API_KEY,
+});
 
 export default async function handler(
   req: NextApiRequest,
@@ -11,36 +19,27 @@ export default async function handler(
     const body = req.body;
     console.log('body', body);
     const msg = {
-      to: 'drewjohnsongt@gmail.com',
-      from: '	turkschartercontact@gmail.com',
+      to: TO_EMAILS,
+      from: FROM_EMAIL,
       subject: `Turks Contact Form Submission - ${body.firstName} ${body.lastName}`,
-      text: `
+      message: `
     First Name: ${body.firstName}
     Last Name: ${body.lastName}
     Email: ${body.email}
     Phone Number: ${body.phoneNumber}
     Message: ${body.message}
     `,
-      html: `
-    <b>First Name:</b> ${body.firstName}
-    <b>Last Name:</b> ${body.lastName}
-    <b>Email:</b> ${body.email}
-    <b>Phone Number:</b> ${body.phoneNumber}
-    <b>Message:</b> ${body.message}`,
     };
-    await sgMail
-      .send(msg)
-      .then(() => {
-        console.log('Successfully sent email');
-        res.status(200).json({ success: true });
+
+    await mg.messages
+      .create(process.env.MAILGUN_DOMAIN, msg)
+      .then((msg) => {
+        console.log(msg);
+        res.status(200).json({ message: 'Success' });
       })
-      .catch((error) => {
-        console.log('Error sending email');
-        console.error(error);
-        res.status(400).json({
-          success: false,
-          message: error?.response?.body || error,
-        });
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json({ message: 'Error' });
       });
   }
 }

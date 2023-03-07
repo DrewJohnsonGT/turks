@@ -1,5 +1,6 @@
 declare namespace NodeJS {
   interface ProcessEnv {
-    SENDGRID_API_KEY: string;
+    MAILGUN_API_KEY: string;
+    MAILGUN_DOMAIN: string;
   }
 }
