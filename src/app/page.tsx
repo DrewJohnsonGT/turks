@@ -1,17 +1,25 @@
 // import clsx from 'clsx';
 // import { EB_Garamond } from 'next/font/google';
-import { About, Contact, Features, Testimonials, Navbar } from '../components';
+import {
+  Banner,
+  Contact,
+  FAQ,
+  Features,
+  Map,
+  Testimonials,
+} from '~/components';
 
 // const font = EB_Garamond({ subsets: ['latin'] });
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Navbar />
-      <About />
+      <Banner />
       <Features />
       <Testimonials />
+      <FAQ />
       <Contact />
+      <Map />
     </main>
   );
 }

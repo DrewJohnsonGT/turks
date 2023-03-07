@@ -12,12 +12,12 @@ export const Footer = () => {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
           version="1.1"
-          viewBox="0 0 2560 100"
+          viewBox="0 0 2560 45"
           x="0"
           y="0">
           <polygon
-            className="text-gray-300 fill-current"
-            points="2560 0 2560 100 0 100"></polygon>
+            className="text-gray-300 fill-main-900"
+            points="2580 0 2560 45 0 45"></polygon>
         </svg>
       </div>
       <div className="container mx-auto px-4">

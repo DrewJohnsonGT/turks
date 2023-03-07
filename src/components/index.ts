@@ -1,7 +1,11 @@
 export { Navbar } from './Navbar';
 export { Footer } from './Footer';
 
-export { About } from './About';
+export { HeadingText } from './HeadingText';
+
+export { Banner } from './Banner';
 export { Features } from './Features';
 export { Testimonials } from './Testimonials';
 export { Contact } from './Contact';
+export { FAQ } from './FAQ';
+export { Map } from './Map';

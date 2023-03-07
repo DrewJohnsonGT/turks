@@ -1,27 +1,40 @@
-import Image from 'next/image';
-
 export const About = () => {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-      <Image
-        src="/images/boat-ocean.png"
-        alt=""
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
-        width={2000}
-        height={2000}
-        priority
-      />
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-            Luxury Boat Charters
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-white">
-            Luxurious and unforgettable boat charter experiences in the
-            beautiful Turks and Caicos Islands.
-          </p>
+    <section className="text-main-900">
+      <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
+        <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">
+          About Us
+        </h2>
+        <div className="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32">
+          <div>
+            <h3 className="font-semibold">Lorem ipsum dolor sit amet?</h3>
+            <p className="mt-1 text-gray-600">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione,
+              fugit? Aspernatur, ullam enim, odit eaque quia rerum ipsum
+              voluptatem consequatur ratione, doloremque debitis? Fuga labore
+              omnis minima, quisquam delectus culpa!
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold">Lorem ipsum dolor sit amet?</h3>
+            <p className="mt-1 text-gray-600">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione,
+              fugit? Aspernatur, ullam enim, odit eaque quia rerum ipsum
+              voluptatem consequatur ratione, doloremque debitis? Fuga labore
+              omnis minima, quisquam delectus culpa!
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold">Lorem ipsum dolor sit amet?</h3>
+            <p className="mt-1 text-gray-600">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione,
+              fugit? Aspernatur, ullam enim, odit eaque quia rerum ipsum
+              voluptatem consequatur ratione, doloremque debitis? Fuga labore
+              omnis minima, quisquam delectus culpa!
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

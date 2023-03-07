@@ -1,11 +1,17 @@
 import {
   GiMartini as CelebrationsIcon,
   GiFishingHook as FishingIcon,
+  GiSnorkel as SnorklingIcon,
+  GiBoatHorizon as RelaxingIcon,
 } from 'react-icons/gi';
-import { MdKitesurfing } from 'react-icons/md';
 import Image from 'next/image';
+import { HeadingText } from '~/components/HeadingText';
 
 const features = [
+  {
+    name: 'Relaxing',
+    icon: RelaxingIcon,
+  },
   {
     name: 'Fishing',
     icon: FishingIcon,
@@ -15,21 +21,19 @@ const features = [
     icon: CelebrationsIcon,
   },
   {
-    name: 'Watersports',
-    icon: MdKitesurfing,
+    name: 'Snorkling',
+    icon: SnorklingIcon,
   },
 ];
 
 export const Features = () => {
   return (
-    <section id="features" className="overflow-hidden bg-white py-24 sm:py-32">
+    <section id="features" className="overflow-hidden bg-white py-12 sm:py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Boat Rental
-              </p>
+              <HeadingText text="Boat Charter" />
               <p className="mt-6 mb-8 text-lg leading-8 text-gray-600">
                 Enjoy the best boat rental in the caicos islands. We have a
                 variety of trips to choose from. Anything from fishing to
@@ -39,9 +43,9 @@ export const Features = () => {
                 {features.map((feature) => (
                   <dt
                     key={feature.name}
-                    className="flex flex-col uppercase text-gray-900 mb-4">
+                    className="flex flex-col uppercase text-main-900 mb-4">
                     <feature.icon
-                      className="text-main-400 mx-auto mb-4"
+                      className="text-main-800 mx-auto mb-4"
                       size={55}
                       aria-hidden="true"
                     />
