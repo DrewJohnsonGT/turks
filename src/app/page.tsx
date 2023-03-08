@@ -1,6 +1,7 @@
 // import clsx from 'clsx';
 // import { EB_Garamond } from 'next/font/google';
 import {
+  About,
   Banner,
   Contact,
   FAQ,
@@ -16,6 +17,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Banner />
       <Features />
+      <About />
       <Testimonials />
       <FAQ />
       <Contact />

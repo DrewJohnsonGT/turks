@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { AiOutlineSend } from 'react-icons/ai';
 import { FaCheckCircle } from 'react-icons/fa';
 import { HeadingText } from '~/components/HeadingText';
+
+const INPUT_CLASS =
+  'block w-full rounded-md border-1 border-main-300 py-2 px-3.5 text-main-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-600 sm:text-sm sm:leading-6';
 
 export const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -45,7 +47,7 @@ export const Contact = () => {
       className="isolate bg-white py-24 px-6 sm:py-32 lg:px-8">
       {hasSuccessfullySent ? (
         <div
-          className="bg-teal-100 max-w-md mx-auto border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md"
+          className="bg-teal-100 max-w-md mx-auto border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3"
           role="alert">
           <div className="flex">
             <FaCheckCircle className="text-green-400 mr-4" size={40} />
@@ -83,7 +85,7 @@ export const Contact = () => {
                     name="firstName"
                     id="firstName"
                     autoComplete="given-name"
-                    className="block w-full rounded-md border-0 py-2 px-3.5 text-main-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-600 sm:text-sm sm:leading-6"
+                    className={INPUT_CLASS}
                     required
                   />
                 </div>
@@ -100,7 +102,7 @@ export const Contact = () => {
                     name="lastName"
                     id="lastName"
                     autoComplete="family-name"
-                    className="block w-full rounded-md border-0 py-2 px-3.5 text-main-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-600 sm:text-sm sm:leading-6"
+                    className={INPUT_CLASS}
                   />
                 </div>
               </div>
@@ -116,7 +118,7 @@ export const Contact = () => {
                     name="email"
                     id="email"
                     autoComplete="email"
-                    className="block w-full rounded-md border-0 py-2 px-3.5 text-main-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-600 sm:text-sm sm:leading-6"
+                    className={INPUT_CLASS}
                     required
                   />
                 </div>
@@ -133,7 +135,7 @@ export const Contact = () => {
                     name="phoneNumber"
                     id="phoneNumber"
                     autoComplete="tel"
-                    className="block w-full rounded-md border-0 py-2 px-3.5 text-main-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-600 sm:text-sm sm:leading-6"
+                    className={INPUT_CLASS}
                   />
                 </div>
               </div>
@@ -148,7 +150,7 @@ export const Contact = () => {
                     name="message"
                     id="message"
                     rows={4}
-                    className="block w-full rounded-md border-0 py-2 px-3.5 text-main-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-600 sm:text-sm sm:leading-6"
+                    className={INPUT_CLASS}
                     required
                   />
                 </div>
@@ -157,19 +159,17 @@ export const Contact = () => {
             <div className="mt-10">
               <button
                 type="submit"
-                className="w-full flex justify-center text-main-800 hover:text-white border border-main-800 hover:bg-main-800 focus:ring-4 focus:outline-none focus:ring-main-300 font-medium rounded-lg text-md px-5 py-2 dark:border-main-500 dark:text-main-500 dark:hover:text-white dark:hover:bg-main-600 dark:focus:ring-main-800">
+                className="w-full flex justify-center items-center text-main-800 hover:text-white border border-main-800 hover:bg-main-800 focus:ring-4 focus:outline-none focus:ring-main-300 font-medium rounded-lg text-md px-5 py-2 dark:border-main-500 dark:text-main-500 dark:hover:text-white dark:hover:bg-main-600 dark:focus:ring-main-800">
                 {isLoading ? (
                   <>
                     <div
-                      className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                      role="status"></div>
+                      className="inline-block h-5 w-5 mr-2 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                      role="status"
+                    />
                     Sending...
                   </>
                 ) : (
-                  <>
-                    Submit
-                    <AiOutlineSend className="m-0 ml-1 inline" size={20} />
-                  </>
+                  'Send'
                 )}
               </button>
             </div>
