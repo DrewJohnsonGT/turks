@@ -52,7 +52,7 @@ export const About = () => {
                 className="object-cover w-full h-64 rounded-xl"
               />
               <h3 className="font-semibold mt-4">{title}</h3>
-              <ul className="mt-1 mr-2 text-gray-600 list-disc">
+              <ul className="mt-1 mr-2 text-gray-600 list-disc list-inside">
                 {items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
