@@ -5,7 +5,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 import { HeadingText } from '~/components/HeadingText';
 
 const INPUT_CLASS =
-  'block w-full rounded-md border-1 border-main-300 py-2 px-3.5 text-main-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-600 sm:text-sm sm:leading-6';
+  'block w-full rounded-md border-2 border-main-900 py-2 px-3.5 text-main-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-600 sm:text-sm sm:leading-6';
 
 export const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
