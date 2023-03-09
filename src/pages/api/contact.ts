@@ -2,7 +2,7 @@ import FormData from 'form-data';
 import Mailgun from 'mailgun.js';
 import { NextApiResponse, NextApiRequest } from 'next';
 
-const TO_EMAILS = ['drewjohnsongt@gmail.com', 'mrdeshaze@gmail.com'];
+const TO_EMAILS = ['drewjohnsongt@gmail.com'];
 const FROM_EMAIL = 'Turks Luxe Contact Form <contact@mg.turks-luxe.com>';
 
 const mailgun = new Mailgun(FormData);
@@ -27,13 +27,15 @@ export default async function handler(
     Last Name: ${body.lastName}
     Email: ${body.email}
     Phone Number: ${body.phoneNumber}
-    Message: ${body.message},
+    Date(s): ${body.dates}
+    Message: ${body.message}
     `,
       html: `
     <b>First Name</b>: ${body.firstName}<br/>
     <b>Last Name</b>: ${body.lastName}<br/>
     <b>Email</b>: ${body.email}<br/>
     <b>Phone Number</b>: ${body.phoneNumber}<br/>
+    <b>Date(s)</b>: ${body.dates}<br/>
     <b>Message</b>: ${body.message}<br/>
     `,
     };

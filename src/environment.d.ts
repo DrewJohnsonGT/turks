@@ -4,3 +4,4 @@ declare namespace NodeJS {
     MAILGUN_DOMAIN: string;
   }
 }
+declare module 'react-tailwindcss-datepicker';

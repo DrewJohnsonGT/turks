@@ -1,5 +1,3 @@
-// import clsx from 'clsx';
-// import { EB_Garamond } from 'next/font/google';
 import {
   About,
   Banner,
@@ -9,8 +7,6 @@ import {
   Map,
   Testimonials,
 } from '~/components';
-
-// const font = EB_Garamond({ subsets: ['latin'] });
 
 export default function Home() {
   return (

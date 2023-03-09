@@ -2,15 +2,36 @@
 
 import { useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
+import Datepicker from 'react-tailwindcss-datepicker';
 import { HeadingText } from '~/components/HeadingText';
 
 const INPUT_CLASS =
   'block w-full rounded-md border-2 border-main-900 py-2 px-3.5 text-main-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-600 sm:text-sm sm:leading-6';
 
+const YESTERDAY_MS = new Date().getTime() - 86400000;
+
+const formatDateString = (startDate: string, endDate?: string) => {
+  const start = new Date(startDate);
+  const end = new Date(endDate || startDate);
+  const startMonth = start.getMonth() + 1;
+  const startDay = start.getDate() + 1;
+  const startYear = start.getFullYear();
+  const endMonth = end.getMonth() + 1;
+  const endDay = end.getDate() + 1;
+  const endYear = end.getFullYear();
+  if (startMonth === endMonth && startDay === endDay && startYear === endYear) {
+    return `${startMonth}/${startDay}/${startYear}`;
+  }
+  return `${startMonth}/${startDay}/${startYear} - ${endMonth}/${endDay}/${endYear}`;
+};
+
 export const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasSuccessfullySent, setHasSuccessfullySent] = useState(false);
   const [error, setError] = useState(false);
+
+  const [startDate, setStartDate] = useState<string>(new Date().toString());
+  const [endDate, setEndDate] = useState<string>();
 
   const handleContactSubmit: React.FormEventHandler<HTMLFormElement> = async (
     e,
@@ -29,6 +50,7 @@ export const Contact = () => {
         lastName: e.currentTarget.lastName.value,
         email: e.currentTarget.email.value,
         phoneNumber: e.currentTarget.phoneNumber.value,
+        dates: formatDateString(startDate, endDate),
         message: e.currentTarget.message.value,
       }),
     });
@@ -41,6 +63,13 @@ export const Contact = () => {
     setIsLoading(false);
   };
 
+  const handleDateChange = (newDate: {
+    startDate: string;
+    endDate: string;
+  }) => {
+    setStartDate(newDate.startDate);
+    setEndDate(newDate.endDate);
+  };
   return (
     <section id="contact" className="isolate py-24 px-6 sm:py-32 lg:px-8">
       {hasSuccessfullySent ? (
@@ -139,9 +168,25 @@ export const Contact = () => {
               </div>
               <div className="sm:col-span-2">
                 <label
+                  htmlFor="dates"
+                  className="block text-sm font-semibold leading-6 text-main-900">
+                  Date(s) Interested
+                </label>
+                <Datepicker
+                  id="dates"
+                  value={{ startDate, endDate }}
+                  onChange={handleDateChange}
+                  inputClassName="border-2 border-main-900 py-2 px-3.5 text-main-900"
+                  displayFormat="MM/DD/YYYY"
+                  minDate={new Date(YESTERDAY_MS)}
+                  useRange={false}
+                />
+              </div>
+              <div className="sm:col-span-2">
+                <label
                   htmlFor="message"
                   className="block text-sm font-semibold leading-6 text-main-900">
-                  Message (Please include the date(s) you are interested in)
+                  Message
                 </label>
                 <div className="mt-2.5">
                   <textarea
