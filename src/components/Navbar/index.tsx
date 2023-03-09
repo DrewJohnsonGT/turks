@@ -7,8 +7,6 @@ import Link from 'next/link';
 
 export const NAV_LINKS = [
   { label: 'About', href: '/#about' },
-  { label: 'Features', href: '/#features' },
-  { label: 'Boats', href: '/#boats' },
   { label: 'Testimonials', href: '/#testimonials' },
   { label: 'Contact', href: '/#contact' },
 ];
@@ -21,11 +19,11 @@ export const Navbar = () => {
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <Link
             className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-main-900"
-            href="">
+            href="#contact">
             <Image
               src="/logo/with-text-blue.png"
               alt="Turks Luxe"
-              className="inline-block"
+              className="inline-block pl-1"
               width={100}
               height={100}
               priority
@@ -48,7 +46,7 @@ export const Navbar = () => {
             {NAV_LINKS.map((link) => (
               <li className="nav-item" key={link.href}>
                 <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-main-900 hover:opacity-75"
+                  className="px-2 flex items-center text-sm uppercase font-bold leading-snug text-main-900 hover:opacity-75"
                   href={link.href}>
                   <span className="ml-2 text-main-900">{link.label}</span>
                 </a>

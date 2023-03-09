@@ -17,36 +17,35 @@ const features = [
     icon: FishingIcon,
   },
   {
-    name: 'Celebrations',
-    icon: CelebrationsIcon,
-  },
-  {
     name: 'Snorkling',
     icon: SnorklingIcon,
+  },
+  {
+    name: 'Celebrations',
+    icon: CelebrationsIcon,
   },
 ];
 
 export const Features = () => {
   return (
-    <section id="features" className="overflow-hidden bg-white py-12 sm:py-12">
+    <section id="features" className="overflow-hidden py-12 sm:py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
               <HeadingText text="Boat Charter" />
-              <p className="mt-6 mb-8 text-lg leading-8 text-gray-600">
+              <p className="mt-6 mb-12 text-lg leading-8 text-gray-600">
                 Enjoy the best boat rental in the caicos islands. We have a
                 variety of trips to choose from. Anything from fishing to
                 watersports to just cruising around the islands!
               </p>
-              <dl className="mt-2 flex justify-around text-base text-gray-600 lg:max-w-none">
+              <dl className="mt-2 flex flex-wrap justify-around text-base text-gray-600 lg:max-w-none">
                 {features.map((feature) => (
                   <dt
                     key={feature.name}
-                    className="flex flex-col uppercase text-main-900 mb-4">
+                    className="flex flex-col text-main-900 mb-4">
                     <feature.icon
-                      className="text-main-800 mx-auto mb-4"
-                      size={55}
+                      className="text-main-800 w-14 h-14 mx-auto mb-4"
                       aria-hidden="true"
                     />
                     <h3>{feature.name}</h3>
@@ -56,11 +55,11 @@ export const Features = () => {
             </div>
           </div>
           <Image
-            src="/images/boat-1.png"
+            src="/images/boat-6.png"
             alt="Boat on water in Turks and Caicos Islands"
-            className="w-[48rem] rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
-            width={600}
-            height={300}
+            className="w-[48rem] shadow-2xl rounded-md sm:w-[57rem] md:-ml-4 lg:-ml-0"
+            width={300}
+            height={250}
           />
         </div>
       </div>

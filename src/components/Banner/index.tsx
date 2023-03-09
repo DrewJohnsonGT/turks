@@ -5,7 +5,7 @@ export const Banner = () => {
     <section className="relative isolate overflow-hidden py-24 sm:py-32">
       <Image
         src="/images/boat-ocean.png"
-        alt=""
+        alt="Boat on water in Turks and Caicos Islands"
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
         width={2000}
         height={2000}

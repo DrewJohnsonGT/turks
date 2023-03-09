@@ -42,9 +42,7 @@ export const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="isolate bg-white py-24 px-6 sm:py-32 lg:px-8">
+    <section id="contact" className="isolate py-24 px-6 sm:py-32 lg:px-8">
       {hasSuccessfullySent ? (
         <div
           className="bg-teal-100 max-w-md mx-auto border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import Image from 'next/image';
 
 export const Footer = () => {
   return (
@@ -44,12 +45,16 @@ export const Footer = () => {
           </div>
         </div>
         <hr className="my-6 border-gray-400" />
-        <div className="flex flex-wrap items-center md:justify-between justify-center">
-          <div className="w-full md:w-4/12 px-4 mx-auto text-center">
-            <div className="text-sm text-white font-light py-1">
-              Copyright © {new Date().getFullYear()}
-            </div>
-          </div>
+        <div className="flex flex-col items-center justify-center text-center text-xs text-white font-light py-1">
+          <Image
+            src="/logo/with-text-white.png"
+            alt="Turks Luxe"
+            className="mb-3"
+            width={150}
+            height={150}
+            priority
+          />
+          Copyright © {new Date().getFullYear()}
         </div>
       </div>
     </footer>

@@ -38,7 +38,7 @@ const SECTIONS = [
 ];
 export const About = () => {
   return (
-    <section className="text-main-900">
+    <section id="about" className="text-main-900">
       <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
         <HeadingText className="text-center" text="Amenities & Activities" />
         <div className="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-3 lg:px-12 xl:px-32">
@@ -49,9 +49,9 @@ export const About = () => {
                 width={300}
                 height={300}
                 alt={title}
-                className="object-cover w-full h-64 rounded-xl"
+                className="object-cover w-full h-64 rounded-md shadow-2xl"
               />
-              <h3 className="font-semibold mt-4">{title}</h3>
+              <h2 className="font-semibold mt-4">{title}</h2>
               <ul className="mt-1 mr-2 text-gray-600 list-disc list-inside">
                 {items.map((item) => (
                   <li key={item}>{item}</li>
