@@ -11,7 +11,7 @@ const SECTIONS = [
       'Sun lounger',
       'Fast engines and very smooth ride',
     ],
-    image: '/images/boat-5.png',
+    image: '/images/boat-4.png',
   },
   {
     title: 'Fun & Adventure',
@@ -22,7 +22,7 @@ const SECTIONS = [
       'Exploring',
       'Island hopping',
     ],
-    image: '/images/boat-4.png',
+    image: '/images/boat-6.png',
   },
   {
     title: 'Relaxing',
@@ -49,7 +49,7 @@ export const About = () => {
                 width={300}
                 height={300}
                 alt={title}
-                className="object-cover w-full h-64 rounded-md shadow-2xl"
+                className="object-fit w-full h-64 rounded-md shadow-2xl"
               />
               <h2 className="font-semibold mt-4">{title}</h2>
               <ul className="mt-1 mr-2 text-gray-600 list-disc list-inside">

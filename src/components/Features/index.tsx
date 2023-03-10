@@ -35,9 +35,13 @@ export const Features = () => {
             <div className="lg:max-w-lg">
               <HeadingText text="Boat Charter" />
               <p className="mt-6 mb-12 text-lg leading-8 text-gray-600">
-                Enjoy the best boat rental in the caicos islands. We have a
-                variety of trips to choose from. Anything from fishing to
-                watersports to just cruising around the islands!
+                Our experienced Captain and Crew can provide you with the
+                perfect charter for a once-in-a-lifetime experience. Whether
+                you&apos;re looking for a romantic cruise or an ocean adventure,
+                our team is here to make sure you have the best experience
+                possible. <br /> <br />
+                Book your charter today and get ready for the ultimate boat
+                charter experience!
               </p>
               <dl className="mt-2 flex flex-wrap justify-around text-base text-gray-600 lg:max-w-none">
                 {features.map((feature) => (
@@ -55,7 +59,7 @@ export const Features = () => {
             </div>
           </div>
           <Image
-            src="/images/boat-6.png"
+            src="/images/boat-5.png"
             alt="Boat on water in Turks and Caicos Islands"
             className="w-[48rem] shadow-2xl rounded-md sm:w-[57rem] md:-ml-4 lg:-ml-0"
             width={300}

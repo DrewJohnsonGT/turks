@@ -16,16 +16,11 @@ const QUESTIONS_AND_ANSWERS = [
     answer:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, fugit? Aspernatur, ullam enim, odit eaque quia rerum ipsum voluptatem consequatur ratione, doloremque debitis? Fuga labore omnis minima, quisquam delectus culpa!',
   },
-  {
-    question: 'Lorem ipsum dolor sit amet?',
-    answer:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, fugit? Aspernatur, ullam enim, odit eaque quia rerum ipsum voluptatem consequatur ratione, doloremque debitis? Fuga labore omnis minima, quisquam delectus culpa!',
-  },
 ];
 
 export const FAQ = () => {
   return (
-    <section>
+    <section id="faq">
       <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
         <HeadingText
           text="Frequently Asked Questions"

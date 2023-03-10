@@ -2,7 +2,7 @@ import FormData from 'form-data';
 import Mailgun from 'mailgun.js';
 import { NextApiResponse, NextApiRequest } from 'next';
 
-const TO_EMAILS = ['drewjohnsongt@gmail.com'];
+const TO_EMAILS = ['drewjohnsongt@gmail.com', 'amyjogoode@gmail.com'];
 const FROM_EMAIL = 'Turks Luxe Contact Form <contact@mg.turks-luxe.com>';
 
 const mailgun = new Mailgun(FormData);
