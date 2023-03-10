@@ -49,7 +49,7 @@ export const About = () => {
                 width={300}
                 height={300}
                 alt={title}
-                className="object-fit w-full h-64 rounded-md shadow-2xl"
+                className="object-cover w-full h-64 rounded-md shadow-2xl"
               />
               <h2 className="font-semibold mt-4">{title}</h2>
               <ul className="mt-1 mr-2 text-gray-600 list-disc list-inside">
